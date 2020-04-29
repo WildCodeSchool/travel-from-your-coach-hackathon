@@ -42,7 +42,10 @@ You probably will need to explore two types of endpoints:
 * endpoint that gives details on one or more webcams; for example, to get details for a webcam located on the "Pic du Midi", in the Pyrenees: <https://api.windy.com/api/webcams/v2/list/webcam=1259146823?show=webcams:image,location,player&key=YOUR_API_KEY>. This endpoint returns an object containing deeply nested data! In this example, you would need to get use one of the "embed" links as a `src` attribute for an `<iframe>` tag. Here's how you'd get the data:
 
     * JS - assuming `data` is what you got via `res.json()` (fetch) or `res.data` (axios): `data.result.webcams[0].player.lifetime.embed`.
-    * PHP - assuming `$data` is obtained by decoding Guzzle's response as an object via `json_decode($response->getBody())`: `$data->result->webcams[0]->player->lifetime->embed`.
+    * PHP - depending on what you're using:
+
+        * Guzzle (after you get the `$response`): `$body = $response->getBody(); $data = json_decode($body); $iframe_src = $data->result->webcams[0]->player->lifetime->embed;`
+        * Symfony/HttpClient (after you get the `$response`): `$data = $response->toArray(); $iframe_src = $data['result']['webcams'][0]['player']['lifetime']['embed'];`
 
 ### 2. MET API
 
