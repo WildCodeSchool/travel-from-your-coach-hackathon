@@ -1,6 +1,6 @@
 # "Travel from your couch" hackathon
 
-Howdy, wilders! Remember, those are just a few usage tips for the Windy&MET APIs, and as always, you should **read the docs**!
+Howdy, wilders! Remember, those are just a few usage tips and examples for the Windy&MET APIs, and as always, you should **read the docs**!
 
 ![Morpheus: read the docs](https://innovation.enova.com/wp-content/uploads/2019/06/what-if-i-told-you-that-if-you-read-our-documentation-there-would-be-no-issue.jpg)
 
